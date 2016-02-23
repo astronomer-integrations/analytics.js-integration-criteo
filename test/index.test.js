@@ -121,21 +121,26 @@ describe('Criteo', function(){
           id: 'xyz'
         });
         analytics.called(window.criteo_q.push, {
-          event: 'viewItem',
-          item: 'xyz'
-        });
-        analytics.called(window.criteo_q.push, {
           event: 'setAccount',
           account: '12345'
+        }, {
+          event: 'viewItem',
+          item: 'xyz'
         });
       });
 
       it('should push with email', function() {
         analytics.identify('99999', { email: 'schnie@astronomer.io' });
-        analytics.track('Viewed Product', {});
+        analytics.track('Viewed Product', { id: 'xxxxx' });
         analytics.called(window.criteo_q.push, {
+          event: 'setAccount',
+          account: '12345'
+        }, {
           event: 'setEmail',
           email: 'schnie@astronomer.io'
+        }, {
+          event: 'viewItem',
+          item: 'xxxxx'
         });
       });
     });
