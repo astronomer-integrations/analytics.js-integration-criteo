@@ -1,30 +1,20 @@
-
-var Analytics = require('analytics.js').constructor;
+var Analytics = require('analytics.js-core').constructor;
 var integration = require('analytics.js-integration');
-var plugin = require('./');
 var sandbox = require('clear-env');
+var tester = require('analytics.js-integration-tester');
+var Criteo = require('../lib');
 
 describe('Criteo', function(){
-  var Criteo = plugin;
   var criteo;
   var analytics;
   var options = {
-    // TODO: fill in this dictionary with the fake options required to test
-    // that the integration can load properly. We'll need to get test
-    // credentials for every integration, so that we can make sure it is
-    // working properly.
-    //
-    // Here's what test credentials might look like:
-    //
-    //   {
-    //     apiKey: 'V7TLXL5WWBA5NOU5MOJQW4'
-    //   }
+    accountId: '12345'
   };
 
   beforeEach(function(){
     analytics = new Analytics;
     criteo = new Criteo(options);
-    analytics.use(plugin);
+    analytics.use(Criteo);
     analytics.use(tester);
     analytics.add(criteo);
   });
@@ -37,13 +27,9 @@ describe('Criteo', function(){
   });
 
   it('should have the right settings', function(){
-    // TODO: add any additional options or globals from the source file itself
-    // to this list, and they will automatically get tested against, like:
-    // integration('Criteo')
-    //   .global('__myIntegration')
-    //   .option('apiKey', '')
     analytics.compare(Criteo, integration('Criteo')
-      .assumesPageview())
+      .assumesPageview()
+      .option('accountId', ''));
   });
 
   describe('before loading', function(){
@@ -80,11 +66,11 @@ describe('Criteo', function(){
 
 
     describe('#identify', function(){
-      beforeEach(function(){
+      // beforeEach(function(){
         // TODO: stub the integration global api.
         // For example:
         // analytics.stub(window.api, 'identify');
-      });
+      // });
 
       it('should send an id', function(){
         analytics.identify('id');
