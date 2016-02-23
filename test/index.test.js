@@ -28,7 +28,7 @@ describe('Criteo', function(){
 
   it('should have the right settings', function(){
     analytics.compare(Criteo, integration('Criteo')
-      .assumesPageview()
+      // .assumesPageview()
       .option('accountId', ''));
   });
 
@@ -61,7 +61,7 @@ describe('Criteo', function(){
     beforeEach(function(done){
       analytics.once('ready', done);
       analytics.initialize();
-      analytics.page();
+      // analytics.page();
     });
 
 
@@ -95,21 +95,48 @@ describe('Criteo', function(){
 
     describe('#track', function(){
       beforeEach(function(){
-        // TODO: stub the integration global api.
-        // for example:
-        // analytics.stub(window.api, 'logEvent');
+        analytics.stub(window.criteo_q, 'push');
       });
 
       it('should send an event', function(){
-        analytics.track('event');
+        // analytics.track('event');
         // TODO: assert that the event is sent.
         // analytics.called(window.api.logEvent, 'event');
       });
 
       it('should send an event and properties', function(){
-        analytics.track('event', { property: true });
+        // analytics.track('event', { property: true });
         // TODO: assert that the event is sent.
         // analytics.called(window.api.logEvent, 'event', { property: true });
+      });
+
+      it('should call viewed product', function(){
+        analytics.stub(criteo, 'viewedProduct');
+        analytics.track('Viewed Product', {});
+        analytics.called(criteo.viewedProduct);
+      });
+
+      it('should push events', function(){
+        analytics.track('Viewed Product', {
+          id: 'xyz'
+        });
+        analytics.called(window.criteo_q.push, {
+          event: 'viewItem',
+          item: 'xyz'
+        });
+        analytics.called(window.criteo_q.push, {
+          event: 'setAccount',
+          account: '12345'
+        });
+      });
+
+      it('should push with email', function() {
+        analytics.identify('99999', { email: 'schnie@astronomer.io' });
+        analytics.track('Viewed Product', {});
+        analytics.called(window.criteo_q.push, {
+          event: 'setEmail',
+          email: 'schnie@astronomer.io'
+        });
       });
     });
   });
