@@ -3,6 +3,7 @@ var integration = require('analytics.js-integration');
 var sandbox = require('clear-env');
 var tester = require('analytics.js-integration-tester');
 var Criteo = require('../lib');
+var md5 = require('../lib/md5.min.js');
 
 describe('Criteo', function() {
     var criteo;
@@ -116,7 +117,7 @@ describe('Criteo', function() {
                     account: '12345'
                 }, {
                     event: 'setEmail',
-                    email: 'schnie@astronomer.io'
+                    email: md5('schnie@astronomer.io'.toLowerCase())
                 }, {
                     "event": "setSiteType",
                     "type": "d"

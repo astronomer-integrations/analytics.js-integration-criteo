@@ -25,5 +25,7 @@
     "mocha": "^2.2.5",
     "mocha-phantomjs": "segmentio/mocha-phantomjs#master",
     "phantomjs": "^1.9.17"
+  },
+  "dependencies": {
   }
 }
