@@ -8,7 +8,7 @@
     "dependencies": {
         "segmentio/analytics.js-integration": "^1.0.0",
         "segmentio/global-queue": "1.0.1",
-        "blueimp/JavaScript-MD5": "^2.3.0"
+        "ndhoule/each": "^1.0.3"
     },
     "development": {
         "segmentio/analytics.js-core": "^2.11.1",
