@@ -126,6 +126,25 @@ describe('Criteo', function () {
                 });
             });
 
+            it('should call trackTransaction in proper format when no products array provided', function () {
+                analytics.track('Bid on Item', { id: 'itemId', price: 9.99 });
+                analytics.called(window.criteo_q.push, {
+                    event: 'setAccount',
+                    account: '12345'
+                }, {
+                    "event": "setSiteType",
+                    "type": "d"
+                }, {
+                    event: "trackTransaction",
+                    id: Date.now(),
+                    item: [{
+                        id: "itemId",
+                        price: 9.99,
+                        quantity: 1
+                    }]
+                });
+            });
+
             it('should push events', function () {
                 analytics.track('Viewed Product', {
                     id: 'xyz'
