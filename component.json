@@ -2,7 +2,7 @@
     "name": "analytics.js-integration-criteo",
     "repo": "astronomerio/analytics.js-integration-criteo",
     "description": "The Criteo analytics.js integration.",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "license": "MIT",
     "main": "lib/index.js",
     "dependencies": {
