@@ -11,7 +11,7 @@ Your unique id provided to you by Criteo.
 
 ### Conversion Events
 
-Criteo has three main events that don't map directly to some user's e-commerce events:
+Criteo has three main events that don't map directly to some users' e-commerce events:
 - trackTransaction
 - viewList
 - viewItem
