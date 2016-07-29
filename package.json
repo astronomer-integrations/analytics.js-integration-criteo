@@ -1,5 +1,5 @@
 {
-  "name": "analytics.js-integration-criteo",
+  "name": "@astronomerio/analytics.js-integration-criteo",
   "version": "1.0.8",
   "description": "",
   "main": "index.js",
