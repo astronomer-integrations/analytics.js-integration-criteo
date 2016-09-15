@@ -17,7 +17,33 @@
   },
   "homepage": "https://github.com/astronomerio/analytics.js-integration-criteo#readme",
   "devDependencies": {
+    "@segment/analytics.js-core": "^3.0.0",
+    "@segment/analytics.js-integration-tester": "^2.0.0",
+    "@segment/clear-env": "^2.0.1",
+    "@segment/eslint-config": "^3.1.1",
+    "browserify": "^13.1.0",
+    "browserify-istanbul": "^2.0.0",
+    "eslint": "^2.13.1",
+    "eslint-plugin-mocha": "^2.2.0",
+    "eslint-plugin-react": "^4.3.0",
+    "eslint-plugin-require-path-exists": "^1.1.5",
+    "istanbul": "^0.4.4",
+    "karma": "^1.1.2",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-junit-reporter": "^1.1.0",
+    "karma-mocha": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-sauce-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "mocha": "^2.5.3",
+    "npm-check": "^5.2.2",
+    "phantomjs-prebuilt": "^2.1.8",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
+    "@ndhoule/each": "github:ndhoule/each",
+    "@segment/analytics.js-integration": "^2.1.0"
   }
 }
