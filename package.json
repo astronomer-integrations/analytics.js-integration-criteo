@@ -11,20 +11,12 @@
     "url": "git+https://github.com/astronomerio/analytics.js-integration-criteo.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/astronomerio/analytics.js-integration-criteo/issues"
   },
   "homepage": "https://github.com/astronomerio/analytics.js-integration-criteo#readme",
   "devDependencies": {
-    "duo": "0.12.x",
-    "duo-test": "0.2.x",
-    "eslint": "0.x",
-    "eslint-config-segment": "^1.0.10",
-    "global-queue": "^1.0.1",
-    "mocha": "^2.2.5",
-    "mocha-phantomjs": "segmentio/mocha-phantomjs#master",
-    "phantomjs": "^1.9.17"
   },
   "dependencies": {
   }
