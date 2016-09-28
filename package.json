@@ -1,8 +1,8 @@
 {
-  "name": "analytics.js-integration-criteo",
+  "name": "@astronomerio/analytics.js-integration-criteo",
   "version": "1.0.8",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "make test"
   },
@@ -11,21 +11,39 @@
     "url": "git+https://github.com/astronomerio/analytics.js-integration-criteo.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/astronomerio/analytics.js-integration-criteo/issues"
   },
   "homepage": "https://github.com/astronomerio/analytics.js-integration-criteo#readme",
   "devDependencies": {
-    "duo": "0.12.x",
-    "duo-test": "0.2.x",
-    "eslint": "0.x",
-    "eslint-config-segment": "^1.0.10",
-    "global-queue": "^1.0.1",
-    "mocha": "^2.2.5",
-    "mocha-phantomjs": "segmentio/mocha-phantomjs#master",
-    "phantomjs": "^1.9.17"
+    "@astronomerio/analytics.js-core": "github:astronomerio/analytics.js-core",
+    "@segment/analytics.js-integration-tester": "^2.0.0",
+    "@segment/clear-env": "^2.0.1",
+    "@segment/eslint-config": "^3.1.1",
+    "browserify": "^13.1.0",
+    "browserify-istanbul": "^2.0.0",
+    "eslint": "^2.13.1",
+    "eslint-plugin-mocha": "^2.2.0",
+    "eslint-plugin-react": "^4.3.0",
+    "eslint-plugin-require-path-exists": "^1.1.5",
+    "istanbul": "^0.4.4",
+    "karma": "^1.1.2",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-junit-reporter": "^1.1.0",
+    "karma-mocha": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-sauce-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "mocha": "^2.5.3",
+    "npm-check": "^5.2.2",
+    "phantomjs-prebuilt": "^2.1.8",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
+    "@ndhoule/each": "^2.0.1",
+    "@segment/analytics.js-integration": "^3.1.0"
   }
 }
