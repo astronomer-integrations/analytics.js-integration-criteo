@@ -119,6 +119,7 @@ describe('Criteo', function () {
         analytics.track('Viewed Product', {
           id: 'xyz'
         });
+
         analytics.called(window.criteo_q.push, {
           event: 'setAccount',
           account: '12345'
